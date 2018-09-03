@@ -8,3 +8,5 @@ The core of this engagement is the articulation of a series of use cases that ar
 The use cases are intended to augment existing models created by NIST and its partner entities for the receipt and validation of voter records.  
 
 This repository stores reference files and other information for Democracy Fund's review
+
+A schema browser (https://rawgit.com/pstenbjorn/VRIUsecases/master/vri.xsd.html) has been added to simplify references to objects.
