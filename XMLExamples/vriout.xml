@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VoterRecordsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="NIST_V0_voter_records_interchange.xsd">
+  <GeneratedDate>2018-09-03</GeneratedDate>
+  <Issuer>Third-Party Issuer</Issuer>
+  <RequestMethod>other</RequestMethod>
+  <Subject>
+    <DateOfBirth>1999-01-01</DateOfBirth>
+    <Name>
+      <FirstName>John</FirstName>
+      <FullName>John S. Smith</FullName>
+      <LastName>Smith</LastName>
+      <MiddleName>S</MiddleName>
+    </Name>
+    <VoterId>
+      <DateOfIssuance>2015-01-01</DateOfIssuance>
+      <StringValue>Z666776677</StringValue>
+      <Type>drivers-license</Type>
+    </VoterId>
+    <VoterId>
+      <StringValue>1234</StringValue>
+      <Type>ssn4</Type>
+    </VoterId>
+  </Subject>
+  <Type>lookup</Type>
+</VoterRecordsRequest>

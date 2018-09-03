@@ -16,7 +16,6 @@ namespace VRI_API_Example
         /* this call is a reference example for converting flat voter data to VRI XML for EPB use
             it envisions the use of this schema for voter data 
         DMV_NUMBER,VOTERID,LAST_NAME,FIRST_NAME,MIDDLE_NAME,SUFFIX,HOUSE_NUMBER,STREET_NAME,STREETTYPE,PRE_DIRECTION,POST_DIRECTION,APT_NUM,CITY,STATE,ZIP,COUNTRY,LOCALITY_NAME,PRECINCT_NAME,PRECINCT_SPLIT_NAME,TOWNPRECINCT_NAME,CONGRESSIONAL_DISTRICT,ST_LEG_UPPER_HOUSE,ST_LEG_LOWER_HOUSE,GENDER,VOTER_STATUS,PROTECTED,NVRA_CONFIRMATION,UOCAVA_VOTER,VOTEBYMAIL_STATUS,ELECTION_DATE,ELECTION_YEAR,ELECTION_NAME,ELECTION_TYPE,DATE_OF_BIRTH,VOTE_CAST_TYPE,VOTE_DATE,BALLOT_STYLE_NAME
-		
         */
         public static void Main(string[] args)
         {
@@ -50,7 +49,7 @@ namespace VRI_API_Example
         public static XmlDocument EPBOutboundRecords (List<DemoRecords> vr)
         {
             XmlDocument response = new XmlDocument();
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(VoterRecords));
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(VoterRecordsResponse));            
             VoterRecords records = new VoterRecords();
             records.VoterRecord = new VoterRecord[vr.Count];
             records.TransactionId = "VRI-EPB-Example_" + DateTime.Now.ToString();
@@ -185,8 +184,11 @@ namespace VRI_API_Example
                 rec++;
             }
 
+            VoterRecordsResponse vrresp = records;
+            vrresp.TransactionId = "epb-vri-example";
+
             TextWriter write = new StreamWriter("C:\\dev\\epb_example.xml");
-            xmlSerializer.Serialize(write, records);
+            xmlSerializer.Serialize(write, vrresp);
             return response;
         }
         

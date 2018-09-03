@@ -9,12 +9,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
 
-/*
-This is a simple reference to objects created in the C# library for the VRI schema, please note that this example includes static values that would be
-substituted with data elements from inbound values or reference database values */
-
-
-
 namespace VRI_API_Example.VRICalls
 {
     public class VRIRequestClasses
@@ -66,9 +60,9 @@ namespace VRI_API_Example.VRICalls
 
             recordsRequest.Subject = voter;
             recordsRequest.GeneratedDate = DateTime.Now;
-            recordsRequest.TransactionId = "eis-vir-" + DateTime.Now.ToString();
+            recordsRequest.TransactionId = "vri-request" + DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "").Replace("AM", "").Replace("PM", "");
 
-            TextWriter write = new StreamWriter("C:\\dev\\nvraout.txt");
+            TextWriter write = new StreamWriter("C:\\dev\\nvraout.xml");
             xmlSerializer.Serialize(write, recordsRequest);
 
             XmlDocument res = responseRecord(recordsRequest);
@@ -94,10 +88,10 @@ namespace VRI_API_Example.VRICalls
         public static XmlDocument responseRecord(VoterRecordsRequest lookuprecord)
         {
             XmlDocument response = new XmlDocument();
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(VoterRecords));
-
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(VoterRecordsResponse));
+            
             VoterRecords records = new VoterRecords();
-
+            
             records.TransactionId = lookuprecord.TransactionId;
             VoterRecord vr = new VoterRecord();
             vr.DateOfBirthSpecified = true;
@@ -132,11 +126,25 @@ namespace VRI_API_Example.VRICalls
             records.VoterRecord = new VoterRecord[1];
 
             records.VoterRecord[0] = vr;
+
+            VoterRecordsResponse vrresp = records;
+            vrresp.TransactionId = "vri-resp" + DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "").Replace("AM", "").Replace("PM", "");
+
+            TextWriter write = new StreamWriter("C:\\dev\\nvraresponse.xml");            
+
+            xmlSerializer.Serialize(write, vrresp);
+
+            //for validation only
+            RequestAcknowledgement ack = new RequestAcknowledgement();
+
+            VoterRecordsResponse vrresp2 = ack;
+
+            vrresp2.TransactionId = "vri-validation" + DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "").Replace("AM", "").Replace("PM", "");
+
+            TextWriter write2 = new StreamWriter("C:\\dev\\vriack.xml");
+            xmlSerializer.Serialize(write2, vrresp2);
+
             
-
-            TextWriter write = new StreamWriter("C:\\dev\\nvraresponse.txt");
-            xmlSerializer.Serialize(write, records);
-
             return response;
         }
 

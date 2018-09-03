@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VoterRecordsResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="VoterRecords" xmlns="NIST_V0_voter_records_interchange.xsd">
+  <TransactionId>epb-vri-example</TransactionId>
+  <VoterRecord>
+    <DateOfBirth>1999-01-01</DateOfBirth>
+    <Gender>M</Gender>
+    <Name>
+      <FirstName>John</FirstName>
+      <FullName>John S Smith</FullName>
+      <LastName>Smith</LastName>
+      <MiddleName>S</MiddleName>
+    </Name>
+    <Party>
+      <Name>Not-specified</Name>
+    </Party>
+    <ResidenceAddress>
+      <NumberedThoroughfareAddress_type>
+        <CompleteAddressNumber>1234</CompleteAddressNumber>
+        <CompleteStreetName>E Main St</CompleteStreetName>
+        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
+      </NumberedThoroughfareAddress_type>
+    </ResidenceAddress>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not protected</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not uocava</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>no absentee ballot sent</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>Active</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>No confirmation</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterId>
+      <StringValue>9999909</StringValue>
+      <Type>state-voter-registration-id</Type>
+    </VoterId>
+    <VoterId>
+      <StringValue>V9990999</StringValue>
+      <Type>drivers-license</Type>
+    </VoterId>
+    <District>
+      <Name>7</Name>
+      <Type>congressional</Type>
+    </District>
+    <District>
+      <Name>11</Name>
+      <Type>state-senate</Type>
+    </District>
+    <District>
+      <Name>71</Name>
+      <Type>state-house</Type>
+    </District>
+    <Locality>
+      <Name>RICHMOND CITY</Name>
+      <Type>county</Type>
+    </Locality>
+    <Locality>
+      <Name>111</Name>
+      <Type>precinct</Type>
+    </Locality>
+    <Locality>
+      <Type>split-precinct</Type>
+    </Locality>
+    <VoterParticipation>
+      <BallotStyle>
+        <ExternalIdentifier>
+          <Type>local-level</Type>
+          <Value />
+        </ExternalIdentifier>
+      </BallotStyle>
+      <Election>
+        <Name>2018 General Election</Name>
+        <StartDate>2018-11-07</StartDate>
+      </Election>
+    </VoterParticipation>
+  </VoterRecord>
+  <VoterRecord>
+    <DateOfBirth>1955-01-01</DateOfBirth>
+    <Gender>F</Gender>
+    <Name>
+      <FirstName>Mary</FirstName>
+      <FullName>Mary Alice Allison</FullName>
+      <LastName>Allison</LastName>
+      <MiddleName>Alice</MiddleName>
+    </Name>
+    <Party>
+      <Name>Not-specified</Name>
+    </Party>
+    <ResidenceAddress>
+      <NumberedThoroughfareAddress_type>
+        <CompleteAddressNumber>2121</CompleteAddressNumber>
+        <CompleteStreetName>N 17th St</CompleteStreetName>
+        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
+      </NumberedThoroughfareAddress_type>
+    </ResidenceAddress>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not protected</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not uocava</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>no absentee ballot sent</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>Active</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>No confirmation</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterId>
+      <StringValue>8888825</StringValue>
+      <Type>state-voter-registration-id</Type>
+    </VoterId>
+    <VoterId>
+      <StringValue>V1111225</StringValue>
+      <Type>drivers-license</Type>
+    </VoterId>
+    <District>
+      <Name>7</Name>
+      <Type>congressional</Type>
+    </District>
+    <District>
+      <Name>11</Name>
+      <Type>state-senate</Type>
+    </District>
+    <District>
+      <Name>71</Name>
+      <Type>state-house</Type>
+    </District>
+    <Locality>
+      <Name>RICHMOND CITY</Name>
+      <Type>county</Type>
+    </Locality>
+    <Locality>
+      <Name>111</Name>
+      <Type>precinct</Type>
+    </Locality>
+    <Locality>
+      <Type>split-precinct</Type>
+    </Locality>
+    <VoterParticipation>
+      <BallotStyle>
+        <ExternalIdentifier>
+          <Type>local-level</Type>
+          <Value />
+        </ExternalIdentifier>
+      </BallotStyle>
+      <Election>
+        <Name>2018 General Election</Name>
+        <StartDate>2018-11-07</StartDate>
+      </Election>
+    </VoterParticipation>
+  </VoterRecord>
+  <VoterRecord>
+    <DateOfBirth>1975-01-01</DateOfBirth>
+    <Gender>M</Gender>
+    <Name>
+      <FirstName>Juan</FirstName>
+      <FullName>Juan Montez Juares</FullName>
+      <LastName>Juares</LastName>
+      <MiddleName>Montez</MiddleName>
+    </Name>
+    <Party>
+      <Name>Not-specified</Name>
+    </Party>
+    <ResidenceAddress>
+      <NumberedThoroughfareAddress_type>
+        <CompleteAddressNumber>5200</CompleteAddressNumber>
+        <CompleteStreetName>E Cary St</CompleteStreetName>
+        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
+      </NumberedThoroughfareAddress_type>
+    </ResidenceAddress>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not protected</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not uocava</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>no absentee ballot sent</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>Active</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>No confirmation</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterId>
+      <StringValue>1155454</StringValue>
+      <Type>state-voter-registration-id</Type>
+    </VoterId>
+    <VoterId>
+      <StringValue>V4554545</StringValue>
+      <Type>drivers-license</Type>
+    </VoterId>
+    <District>
+      <Name>7</Name>
+      <Type>congressional</Type>
+    </District>
+    <District>
+      <Name>11</Name>
+      <Type>state-senate</Type>
+    </District>
+    <District>
+      <Name>71</Name>
+      <Type>state-house</Type>
+    </District>
+    <Locality>
+      <Name>RICHMOND CITY</Name>
+      <Type>county</Type>
+    </Locality>
+    <Locality>
+      <Name>111</Name>
+      <Type>precinct</Type>
+    </Locality>
+    <Locality>
+      <Type>split-precinct</Type>
+    </Locality>
+    <VoterParticipation>
+      <BallotStyle>
+        <ExternalIdentifier>
+          <Type>local-level</Type>
+          <Value />
+        </ExternalIdentifier>
+      </BallotStyle>
+      <Election>
+        <Name>2018 General Election</Name>
+        <StartDate>2018-11-07</StartDate>
+      </Election>
+    </VoterParticipation>
+  </VoterRecord>
+  <VoterRecord>
+    <DateOfBirth>2000-01-01</DateOfBirth>
+    <Gender>M</Gender>
+    <Name>
+      <FirstName>Patrick</FirstName>
+      <FullName>Patrick Andrew Reilly, Jr.</FullName>
+      <LastName>Reilly</LastName>
+      <MiddleName>Andrew</MiddleName>
+    </Name>
+    <Party>
+      <Name>Not-specified</Name>
+    </Party>
+    <ResidenceAddress>
+      <NumberedThoroughfareAddress_type>
+        <CompleteAddressNumber>3355</CompleteAddressNumber>
+        <CompleteStreetName>N 19th St</CompleteStreetName>
+        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
+      </NumberedThoroughfareAddress_type>
+    </ResidenceAddress>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not protected</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not uocava</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>no absentee ballot sent</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>Active</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>No confirmation</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterId>
+      <StringValue>1022554</StringValue>
+      <Type>state-voter-registration-id</Type>
+    </VoterId>
+    <VoterId>
+      <StringValue>V4545555</StringValue>
+      <Type>drivers-license</Type>
+    </VoterId>
+    <District>
+      <Name>7</Name>
+      <Type>congressional</Type>
+    </District>
+    <District>
+      <Name>11</Name>
+      <Type>state-senate</Type>
+    </District>
+    <District>
+      <Name>71</Name>
+      <Type>state-house</Type>
+    </District>
+    <Locality>
+      <Name>RICHMOND CITY</Name>
+      <Type>county</Type>
+    </Locality>
+    <Locality>
+      <Name>111</Name>
+      <Type>precinct</Type>
+    </Locality>
+    <Locality>
+      <Type>split-precinct</Type>
+    </Locality>
+    <VoterParticipation>
+      <BallotStyle>
+        <ExternalIdentifier>
+          <Type>local-level</Type>
+          <Value />
+        </ExternalIdentifier>
+      </BallotStyle>
+      <Election>
+        <Name>2018 General Election</Name>
+        <StartDate>2018-11-07</StartDate>
+      </Election>
+    </VoterParticipation>
+  </VoterRecord>
+  <VoterRecord>
+    <DateOfBirth>1984-01-01</DateOfBirth>
+    <Gender>F</Gender>
+    <Name>
+      <FirstName>Susan</FirstName>
+      <FullName>Susan McAndrew</FullName>
+      <LastName>McAndrew</LastName>
+      <MiddleName />
+    </Name>
+    <Party>
+      <Name>Not-specified</Name>
+    </Party>
+    <ResidenceAddress>
+      <NumberedThoroughfareAddress_type>
+        <CompleteAddressNumber>22</CompleteAddressNumber>
+        <CompleteStreetName>N 21st St</CompleteStreetName>
+        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
+      </NumberedThoroughfareAddress_type>
+    </ResidenceAddress>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not protected</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not uocava</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>no absentee ballot sent</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>Active</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>No confirmation</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterId>
+      <StringValue>6556565</StringValue>
+      <Type>state-voter-registration-id</Type>
+    </VoterId>
+    <VoterId>
+      <StringValue>V5454554</StringValue>
+      <Type>drivers-license</Type>
+    </VoterId>
+    <District>
+      <Name>7</Name>
+      <Type>congressional</Type>
+    </District>
+    <District>
+      <Name>11</Name>
+      <Type>state-senate</Type>
+    </District>
+    <District>
+      <Name>71</Name>
+      <Type>state-house</Type>
+    </District>
+    <Locality>
+      <Name>RICHMOND CITY</Name>
+      <Type>county</Type>
+    </Locality>
+    <Locality>
+      <Name>111</Name>
+      <Type>precinct</Type>
+    </Locality>
+    <Locality>
+      <Type>split-precinct</Type>
+    </Locality>
+    <VoterParticipation>
+      <BallotStyle>
+        <ExternalIdentifier>
+          <Type>local-level</Type>
+          <Value />
+        </ExternalIdentifier>
+      </BallotStyle>
+      <Election>
+        <Name>2018 General Election</Name>
+        <StartDate>2018-11-07</StartDate>
+      </Election>
+    </VoterParticipation>
+  </VoterRecord>
+  <VoterRecord>
+    <DateOfBirth>1964-01-01</DateOfBirth>
+    <Gender>F</Gender>
+    <Name>
+      <FirstName>Jesse</FirstName>
+      <FullName>Jesse Wilson Ferguson</FullName>
+      <LastName>Ferguson</LastName>
+      <MiddleName>Wilson</MiddleName>
+    </Name>
+    <Party>
+      <Name>Not-specified</Name>
+    </Party>
+    <ResidenceAddress>
+      <NumberedThoroughfareAddress_type>
+        <CompleteAddressNumber>1124</CompleteAddressNumber>
+        <CompleteStreetName>E Main St</CompleteStreetName>
+        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
+      </NumberedThoroughfareAddress_type>
+    </ResidenceAddress>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not protected</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not uocava</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>no absentee ballot sent</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>Active</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>No confirmation</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterId>
+      <StringValue>6565888</StringValue>
+      <Type>state-voter-registration-id</Type>
+    </VoterId>
+    <VoterId>
+      <StringValue>V4588855</StringValue>
+      <Type>drivers-license</Type>
+    </VoterId>
+    <District>
+      <Name>7</Name>
+      <Type>congressional</Type>
+    </District>
+    <District>
+      <Name>11</Name>
+      <Type>state-senate</Type>
+    </District>
+    <District>
+      <Name>71</Name>
+      <Type>state-house</Type>
+    </District>
+    <Locality>
+      <Name>RICHMOND CITY</Name>
+      <Type>county</Type>
+    </Locality>
+    <Locality>
+      <Name>111</Name>
+      <Type>precinct</Type>
+    </Locality>
+    <Locality>
+      <Type>split-precinct</Type>
+    </Locality>
+    <VoterParticipation>
+      <BallotStyle>
+        <ExternalIdentifier>
+          <Type>local-level</Type>
+          <Value />
+        </ExternalIdentifier>
+      </BallotStyle>
+      <Election>
+        <Name>2018 General Election</Name>
+        <StartDate>2018-11-07</StartDate>
+      </Election>
+    </VoterParticipation>
+  </VoterRecord>
+  <VoterRecord>
+    <DateOfBirth>1977-01-01</DateOfBirth>
+    <Gender>M</Gender>
+    <Name>
+      <FirstName>Armond</FirstName>
+      <FullName>Armond Lester Waters</FullName>
+      <LastName>Waters</LastName>
+      <MiddleName>Lester</MiddleName>
+    </Name>
+    <Party>
+      <Name>Not-specified</Name>
+    </Party>
+    <ResidenceAddress>
+      <NumberedThoroughfareAddress_type>
+        <CompleteAddressNumber>8855</CompleteAddressNumber>
+        <CompleteStreetName>E Marshall St</CompleteStreetName>
+        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
+      </NumberedThoroughfareAddress_type>
+    </ResidenceAddress>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not protected</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not uocava</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>no absentee ballot sent</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>Inactive</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>No confirmation</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterId>
+      <StringValue>9955200</StringValue>
+      <Type>state-voter-registration-id</Type>
+    </VoterId>
+    <VoterId>
+      <StringValue>V3355656</StringValue>
+      <Type>drivers-license</Type>
+    </VoterId>
+    <District>
+      <Name>7</Name>
+      <Type>congressional</Type>
+    </District>
+    <District>
+      <Name>11</Name>
+      <Type>state-senate</Type>
+    </District>
+    <District>
+      <Name>71</Name>
+      <Type>state-house</Type>
+    </District>
+    <Locality>
+      <Name>RICHMOND CITY</Name>
+      <Type>county</Type>
+    </Locality>
+    <Locality>
+      <Name>111</Name>
+      <Type>precinct</Type>
+    </Locality>
+    <Locality>
+      <Type>split-precinct</Type>
+    </Locality>
+    <VoterParticipation>
+      <BallotStyle>
+        <ExternalIdentifier>
+          <Type>local-level</Type>
+          <Value />
+        </ExternalIdentifier>
+      </BallotStyle>
+      <Election>
+        <Name>2018 General Election</Name>
+        <StartDate>2018-11-07</StartDate>
+      </Election>
+    </VoterParticipation>
+  </VoterRecord>
+  <VoterRecord>
+    <DateOfBirth>1945-01-01</DateOfBirth>
+    <Gender>F</Gender>
+    <Name>
+      <FirstName>Yun</FirstName>
+      <FullName>Yun Lin</FullName>
+      <LastName>Lin</LastName>
+      <MiddleName />
+    </Name>
+    <Party>
+      <Name>Not-specified</Name>
+    </Party>
+    <ResidenceAddress>
+      <NumberedThoroughfareAddress_type>
+        <CompleteAddressNumber>654</CompleteAddressNumber>
+        <CompleteStreetName>E Leigh St</CompleteStreetName>
+        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
+      </NumberedThoroughfareAddress_type>
+    </ResidenceAddress>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not protected</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>not uocava</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>no absentee ballot sent</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>Active</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterClassification>
+      <Assertion>no</Assertion>
+      <OtherType>No confirmation</OtherType>
+      <Type>other</Type>
+    </VoterClassification>
+    <VoterId>
+      <StringValue>1002250</StringValue>
+      <Type>state-voter-registration-id</Type>
+    </VoterId>
+    <VoterId>
+      <StringValue>V3222332</StringValue>
+      <Type>drivers-license</Type>
+    </VoterId>
+    <District>
+      <Name>7</Name>
+      <Type>congressional</Type>
+    </District>
+    <District>
+      <Name>11</Name>
+      <Type>state-senate</Type>
+    </District>
+    <District>
+      <Name>71</Name>
+      <Type>state-house</Type>
+    </District>
+    <Locality>
+      <Name>RICHMOND CITY</Name>
+      <Type>county</Type>
+    </Locality>
+    <Locality>
+      <Name>111</Name>
+      <Type>precinct</Type>
+    </Locality>
+    <Locality>
+      <Type>split-precinct</Type>
+    </Locality>
+    <VoterParticipation>
+      <BallotStyle>
+        <ExternalIdentifier>
+          <Type>local-level</Type>
+          <Value />
+        </ExternalIdentifier>
+      </BallotStyle>
+      <Election>
+        <Name>2018 General Election</Name>
+        <StartDate>2018-11-07</StartDate>
+      </Election>
+    </VoterParticipation>
+  </VoterRecord>
+</VoterRecordsResponse>
