@@ -9,4 +9,4 @@ The use cases are intended to augment existing models created by NIST and its pa
 
 This repository stores reference files and other information for Democracy Fund's review
 
-A [schema browser] (https://rawgit.com/pstenbjorn/VRIUsecases/master/vri.xsd.html) has been added to simplify references to objects.
+A schema browser (https://rawgit.com/pstenbjorn/VRIUsecases/master/vri.xsd.html) has been added to simplify references to objects.
