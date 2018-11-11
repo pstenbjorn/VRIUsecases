@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Xml;
 using System.Xml.Serialization;
-using vriv6;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
@@ -49,16 +48,20 @@ namespace VRI_API_Example
         public static XmlDocument EPBOutboundRecords (List<DemoRecords> vr)
         {
             XmlDocument response = new XmlDocument();
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(VoterRecordsResponse));            
-            VoterRecords records = new VoterRecords();
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("addr", "http://www.fgdc.gov/schemas/address/addr");
+            ns.Add("addr_type", "http://www.fgdc.gov/schemas/address/addr_type");
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(VoterRecordsResponse));
+            VoterRecordResults records = new VoterRecordResults();
             records.VoterRecord = new VoterRecord[vr.Count];
             records.TransactionId = "VRI-EPB-Example_" + DateTime.Now.ToString();
             int rec = 0;
             foreach(DemoRecords d in vr)
             {
                 VoterRecord voter = new VoterRecord();
-                voter.DateOfBirthSpecified = true;
-                voter.DateOfBirth = Convert.ToDateTime(d.DATE_OF_BIRTH);
+                voter.Voter = new Voter();
+                voter.Voter.DateOfBirthSpecified = true;
+                voter.Voter.DateOfBirth = Convert.ToDateTime(d.DATE_OF_BIRTH);
                 Name votername = new Name()
                 {
                     FirstName = d.FIRST_NAME,
@@ -67,14 +70,14 @@ namespace VRI_API_Example
                 };
                 string[] midname = new string[] { d.MIDDLE_NAME };
                 votername.MiddleName = midname;
-                voter.Name = votername;
-                voter.ResidenceAddress = BuildAddress(d.HOUSE_NUMBER, d.PRE_DIRECTION, d.STREET_NAME, d.STREETTYPE,
+                voter.Voter.Name = votername;
+                voter.Voter.ResidenceAddress = BuildAddress(d.HOUSE_NUMBER, d.PRE_DIRECTION, d.STREET_NAME, d.STREETTYPE,
                     d.POST_DIRECTION, d.APT_NUM, d.CITY, d.STATE, d.ZIP, d.COUNTRY);
                 //This example does not specify a party, but this is where it would be added
 
                 Party p = new Party();
                 p.Name = "Not-specified";
-                voter.Party = p;
+                voter.Voter.Party = p;
                 //Known Voter ID Type
                 VoterId vid = new VoterId();
                 VoterId dmv = new VoterId();
@@ -83,9 +86,9 @@ namespace VRI_API_Example
                 vid.StringValue = d.VOTERID;
                 dmv.StringValue = d.DMV_NUMBER;
 
-                voter.VoterId = new VoterId[2];
-                voter.VoterId[0] = vid;
-                voter.VoterId[1] = dmv;
+                voter.Voter.VoterId = new VoterId[2];
+                voter.Voter.VoterId[0] = vid;
+                voter.Voter.VoterId[1] = dmv;
 
                 //adding districts - this exammple includes congressional, state senate and state house
                 voter.District = new ReportingUnit[3];
@@ -100,7 +103,7 @@ namespace VRI_API_Example
                 voter.Locality[2] = BuildReportingUnit("split-precinct", d.PRECINCT_SPLIT_NAME);
 
                 //other information about voter
-                voter.Gender = d.GENDER;
+                voter.Voter.Gender = d.GENDER;
 
                 //Protected voter
                 VoterClassification prot = new VoterClassification();
@@ -155,12 +158,12 @@ namespace VRI_API_Example
                     conf.Type = VoterClassificationType.other;
                 }
 
-                voter.VoterClassification = new VoterClassification[5];
-                voter.VoterClassification[0] = prot;
-                voter.VoterClassification[1] = uocava;
-                voter.VoterClassification[2] = ab;
-                voter.VoterClassification[3] = nvra;
-                voter.VoterClassification[4] = conf;
+                voter.Voter.VoterClassification = new VoterClassification[5];
+                voter.Voter.VoterClassification[0] = prot;
+                voter.Voter.VoterClassification[1] = uocava;
+                voter.Voter.VoterClassification[2] = ab;
+                voter.Voter.VoterClassification[3] = nvra;
+                voter.Voter.VoterClassification[4] = conf;
 
                 //Election specific information using the VoterParticipation Object
                 VoterParticipation participation = new VoterParticipation();
@@ -188,7 +191,7 @@ namespace VRI_API_Example
             vrresp.TransactionId = "epb-vri-example";
 
             TextWriter write = new StreamWriter("C:\\dev\\epb_example.xml");
-            xmlSerializer.Serialize(write, vrresp);
+            xmlSerializer.Serialize(write, vrresp, ns);
             return response;
         }
         
@@ -208,14 +211,37 @@ namespace VRI_API_Example
         {
             VoterResidenceAddress ra = new VoterResidenceAddress();
             NumberedThoroughfareAddress_type nt = new NumberedThoroughfareAddress_type();
-            nt.CompleteAddressNumber = housenum;
-            nt.CompleteStreetName = predir + " " + streetname + " " + streettype + " " + postdir;
-            nt.CompleteStreetName = nt.CompleteStreetName.Trim();
+            CompletePlaceName_type pn = new CompletePlaceName_type();
+            PlaceName_type ptt = new PlaceName_type();
+            ptt.PlaceNameType = PlaceNameType_type.MunicipalJurisdiction;
+            ptt.Value = city;
+            pn.PlaceName = new PlaceName_type[1];
+            pn.PlaceName[0] = ptt;
+            nt.CompletePlaceName = new CompletePlaceName_type[1];
+            nt.CompletePlaceName[0] = pn;
+            CompleteAddressNumber_type hn = new CompleteAddressNumber_type();
+            hn.AddressNumber = housenum;
+            nt.CompleteAddressNumber = hn;
+            CompleteStreetName_type sn = new CompleteStreetName_type();
+            string fn = predir + " " + streetname + " " + streettype + " " + postdir;
+            sn.StreetName = fn.Trim();
+            nt.CompleteStreetName = sn;
+            SubaddressElement_type subaddress = new SubaddressElement_type();
+            nt.CompleteSubaddress = new SubaddressElement_type[2];
             if (apt != "")
             {
-                nt.CompleteSubaddress += " APT " + apt;
+                subaddress.SubaddressIdentifier = " APT " + apt;                
+               
             }
-            nt.CompleteSubaddress = city + ", " + st + " " + zip + " " + country;
+            else
+            {
+                subaddress.SubaddressIdentifier = "";
+            }
+            nt.CompleteSubaddress[0] = subaddress;
+            SubaddressElement_type subaddress1 = new SubaddressElement_type();
+            subaddress1.SubaddressIdentifier = city + ", " + st + " " + zip + " " + country;
+            nt.CompleteSubaddress[1] = subaddress1;
+            
 
             ra.NumberedThoroughfareAddress_type = nt;
 

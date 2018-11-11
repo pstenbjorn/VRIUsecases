@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Xml;
 using System.Xml.Serialization;
-using vriv6;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
@@ -18,9 +17,12 @@ namespace VRI_API_Example.VRICalls
             XmlDocument output = null;
             JObject voterlookup = JObject.Parse(json);
             string firstname = (string)voterlookup["VoterRequest"]["Subject"]["FirstName"];
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("addr", "http://www.fgdc.gov/schemas/address/addr");
+            ns.Add("addr_type", "http://www.fgdc.gov/schemas/address/addr_type");
 
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(VoterRecordsRequest));
-
+            
             VoterRecordsRequest recordsRequest = new VoterRecordsRequest();
             Voter voter = new Voter();
             Name name = new Name()
@@ -63,13 +65,13 @@ namespace VRI_API_Example.VRICalls
             recordsRequest.TransactionId = "vri-request" + DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "").Replace("AM", "").Replace("PM", "");
 
             TextWriter write = new StreamWriter("C:\\dev\\nvraout.xml");
-            xmlSerializer.Serialize(write, recordsRequest);
+            xmlSerializer.Serialize(write, recordsRequest, ns);
 
             XmlDocument res = responseRecord(recordsRequest);
 
             using(MemoryStream ms = new MemoryStream())
             {
-                xmlSerializer.Serialize(ms, recordsRequest);
+                xmlSerializer.Serialize(ms, recordsRequest, ns);
                 ms.Position = 0;
                 XmlReaderSettings settings = new XmlReaderSettings();
                 settings.IgnoreWhitespace = true;
@@ -88,14 +90,19 @@ namespace VRI_API_Example.VRICalls
         public static XmlDocument responseRecord(VoterRecordsRequest lookuprecord)
         {
             XmlDocument response = new XmlDocument();
+            XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
+            ns.Add("addr", "http://www.fgdc.gov/schemas/address/addr");
+            ns.Add("addr_type", "http://www.fgdc.gov/schemas/address/addr_type");
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(VoterRecordsResponse));
             
-            VoterRecords records = new VoterRecords();
+            
+            VoterRecordResults records = new VoterRecordResults();
             
             records.TransactionId = lookuprecord.TransactionId;
             VoterRecord vr = new VoterRecord();
-            vr.DateOfBirthSpecified = true;
-            vr.DateOfBirth = Convert.ToDateTime(lookuprecord.Subject.DateOfBirth);
+            vr.Voter = new Voter();
+            vr.Voter.DateOfBirthSpecified = true;
+            vr.Voter.DateOfBirth = Convert.ToDateTime(lookuprecord.Subject.DateOfBirth);
             Name votername = new Name()
             {
                 FirstName = lookuprecord.Subject.Name.FirstName,
@@ -103,18 +110,18 @@ namespace VRI_API_Example.VRICalls
                 FullName = lookuprecord.Subject.Name.FullName
             };
 
-            vr.Name = votername;
-            vr.ResidenceAddress = voterAddress(lookuprecord.Subject);
-            vr.MailingAddress = mailingAddress(lookuprecord.Subject);
+            vr.Voter.Name = votername;
+            vr.Voter.ResidenceAddress = voterAddress(lookuprecord.Subject);
+            vr.Voter.MailingAddress = mailingAddress(lookuprecord.Subject);
             Party p = new Party();
             p.Name = "Not-specified";
-            vr.Party = p;
+            vr.Voter.Party = p;
             VoterId vid = new VoterId();
             vid.Type = VoterIdType.statevoterregistrationid;
             vid.StringValue = "99998888991";
 
-            vr.VoterId = new VoterId[1];
-            vr.VoterId[0] = vid;
+            vr.Voter.VoterId = new VoterId[1];
+            vr.Voter.VoterId[0] = vid;
 
             vr.District = new ReportingUnit[1];
             vr.District[0] = ru("congressional", "7");
@@ -132,19 +139,30 @@ namespace VRI_API_Example.VRICalls
 
             TextWriter write = new StreamWriter("C:\\dev\\nvraresponse.xml");            
 
-            xmlSerializer.Serialize(write, vrresp);
+            xmlSerializer.Serialize(write, vrresp, ns);
 
-            //for validation only
-            RequestAcknowledgement ack = new RequestAcknowledgement();
-
-            VoterRecordsResponse vrresp2 = ack;
-
+            //Simple acknowledgement example
+            RequestAcknowledgement ack = new RequestAcknowledgement();            
+            VoterRecordsResponse vrresp2 = ack;                  
             vrresp2.TransactionId = "vri-validation" + DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "").Replace("AM", "").Replace("PM", "");
 
             TextWriter write2 = new StreamWriter("C:\\dev\\vriack.xml");
-            xmlSerializer.Serialize(write2, vrresp2);
+            xmlSerializer.Serialize(write2, vrresp2, ns);
 
-            
+            //Rejection request
+            RequestRejection rejection = new RequestRejection();
+            Error e = new Error();
+            e.OtherError = "There was an error in processing this request";
+            rejection.Error = new Error[1];
+            rejection.Error[0] = e;
+            VoterRecordsResponse resperr = rejection;
+            resperr.TransactionId = "vri-validation" + DateTime.Now.ToString().Replace("/", "").Replace(":", "").Replace(" ", "").Replace("AM", "").Replace("PM", "");
+
+            TextWriter writeerr = new StreamWriter("C:\\dev\\vrierr.xml");
+            xmlSerializer.Serialize(writeerr, resperr, ns);
+
+
+
             return response;
         }
 
@@ -152,11 +170,32 @@ namespace VRI_API_Example.VRICalls
         {
             VoterResidenceAddress va = new VoterResidenceAddress();
 
-            NumberedThoroughfareAddress_type na = new NumberedThoroughfareAddress_type();
+            NumberedThoroughfareAddress_type na = new NumberedThoroughfareAddress_type();            
+            CompletePlaceName_type pn = new CompletePlaceName_type();
+            PlaceName_type ptt = new PlaceName_type();            
+            ptt.PlaceNameType = PlaceNameType_type.MunicipalJurisdiction;
+            ptt.Value = "RICHMOND CITY";
+            pn.PlaceName = new PlaceName_type[1];
+            pn.PlaceName[0] = ptt;
+            
+            
+            CompleteAddressNumber_type hn = new CompleteAddressNumber_type();
+            hn.AddressNumber = "1324";
+            
+            CompleteStreetName_type sn = new CompleteStreetName_type();
+            sn.StreetName = "E Main Street";
+            SubaddressElement_type subaddress = new SubaddressElement_type();
 
-            na.CompleteAddressNumber = "1324";
-            na.CompleteStreetName = "E Main Street";
-            na.CompleteSubaddress = "Richmond, VA 23222";
+            
+            subaddress.SubaddressIdentifier = "Richmond, VA 23222";
+            na.CompletePlaceName = new CompletePlaceName_type[1];
+            na.CompletePlaceName[0] = pn;
+            na.CompleteAddressNumber = hn;
+            na.CompleteStreetName = sn;
+            na.CompleteSubaddress = new SubaddressElement_type[1];
+            na.CompleteSubaddress[0] = subaddress;
+            
+            
 
             va.NumberedThoroughfareAddress_type = na;
 
@@ -168,8 +207,13 @@ namespace VRI_API_Example.VRICalls
         {
             VoterMailingAddress ma = new VoterMailingAddress();
             USPSPostalDeliveryBox_type box = new USPSPostalDeliveryBox_type();
-            box.USPSBox = "PO Box 12345";
-            box.CompleteSubaddress = "Richmond, VA 23219";
+            USPSBox_type bt = new USPSBox_type();
+            bt.USPSBoxId = "PO Box 12345";
+            box.USPSBox = bt;
+            SubaddressElement_type subaddress = new SubaddressElement_type();
+            subaddress.SubaddressIdentifier = "Richmond, VA 23219";
+            box.CompleteSubaddress = new SubaddressElement_type[1];
+            box.CompleteSubaddress[0] = subaddress;
             ma.USPSPostalDeliveryBox_type = box;
 
             return ma;
