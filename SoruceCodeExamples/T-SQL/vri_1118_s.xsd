@@ -1,11 +1,11 @@
-create xml schema collection VoterRecordsInterchangeV0 as 
-N'<?xml version="1.0"?>
+<?xml version="1.0"?>
 <xsd:schema elementFormDefault="qualified" version="0.0" 
 	xmlns="https://raw.githubusercontent.com/usnistgov/VoterRecordsInterchange/master/NIST_V0_voter_records_interchange.xsd" 
 xmlns:addr="http://www.fgdc.gov/schemas/address/addr" 
 xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type"
 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 targetNamespace="https://raw.githubusercontent.com/usnistgov/VoterRecordsInterchange/master/NIST_V0_voter_records_interchange.xsd" >
+<!-- this schema is derrived from the VRI schema V 0.0 to allow for use within MS SQL Server (v 2012 and newer) Schema -->
 
   <!-- ========== Roots ========== -->
   <xsd:element name="VoterRecordsRequest" type="VoterRecordsRequest"/>
@@ -18,22 +18,22 @@ targetNamespace="https://raw.githubusercontent.com/usnistgov/VoterRecordsInterch
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="no">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">For a voterís or third partyís assertion of ìnoî or ìfalseî.</xsd:documentation>
+          <xsd:documentation xml:lang="en">For a voter‚Äôs or third party‚Äôs assertion of ‚Äúno‚Äù or ‚Äúfalse‚Äù.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="yes">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">For a voterís or third partyís assertion of ìyesî or ìtrueî.</xsd:documentation>
+          <xsd:documentation xml:lang="en">For a voter‚Äôs or third party‚Äôs assertion of ‚Äúyes‚Äù or ‚Äútrue‚Äù.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="unknown">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">For a voterís or third partyís assertion of ìunknownî.</xsd:documentation>
+          <xsd:documentation xml:lang="en">For a voter‚Äôs or third party‚Äôs assertion of ‚Äúunknown‚Äù.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="other">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">For a voterís or third partyís assertion of ìotherî.</xsd:documentation>
+          <xsd:documentation xml:lang="en">For a voter‚Äôs or third party‚Äôs assertion of ‚Äúother‚Äù.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
     </xsd:restriction>
@@ -197,7 +197,7 @@ Enumeration for the type of geopolitical unit, used in the Type sub-element in t
       </xsd:enumeration>
       <xsd:enumeration value="combined-precinct">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Used for one or more precincts that have been combined for the purposes of reporting.  Used for ìWardî if ìWardî is used interchangeably with ìCombinedPrecinctî.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Used for one or more precincts that have been combined for the purposes of reporting.  Used for ‚ÄúWard‚Äù if ‚ÄúWard‚Äù is used interchangeably with ‚ÄúCombinedPrecinct‚Äù.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="congressional">
@@ -237,7 +237,7 @@ Enumeration for the type of geopolitical unit, used in the Type sub-element in t
       </xsd:enumeration>
       <xsd:enumeration value="precinct">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Used also for ìWardî or ìDistrictî when these terms are used interchangeably with ìPrecinctî.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Used also for ‚ÄúWard‚Äù or ‚ÄúDistrict‚Äù when these terms are used interchangeably with ‚ÄúPrecinct‚Äù.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="school">
@@ -321,7 +321,7 @@ Enumeration for registration-related errors, used in the Error attribute of Regi
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="identity-lookup-failed">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">A lookup on the voterís identity failed.</xsd:documentation>
+          <xsd:documentation xml:lang="en">A lookup on the voter‚Äôs identity failed.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="incomplete">
@@ -404,7 +404,7 @@ Enumeration for types of registration forms, used in the RegistrationForm attrib
       </xsd:enumeration>
       <xsd:enumeration value="voter-via-election-registrars-office">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">The voter via an election or registrarís office.</xsd:documentation>
+          <xsd:documentation xml:lang="en">The voter via an election or registrar‚Äôs office.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="voter-via-email">
@@ -698,7 +698,7 @@ Enumeration for the type of voter ID, used in the Type attribute of VoterId.</xs
     <xsd:restriction base="xsd:string">
       <xsd:enumeration value="drivers-license">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Used for a driverís license.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Used for a driver‚Äôs license.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="local-voter-registration-id">
@@ -723,7 +723,7 @@ Enumeration for the type of voter ID, used in the Type attribute of VoterId.</xs
       </xsd:enumeration>
       <xsd:enumeration value="state-voter-registration-id">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Used for a stateís voter registration record ID.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Used for a state‚Äôs voter registration record ID.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="unspecified-document">
@@ -733,7 +733,7 @@ Enumeration for the type of voter ID, used in the Type attribute of VoterId.</xs
       </xsd:enumeration>
       <xsd:enumeration value="unspecified-document-with-name-and-address">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Used for a document that contains the voterís name and address, such as a utility bill.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Used for a document that contains the voter‚Äôs name and address, such as a utility bill.</xsd:documentation>
         </xsd:annotation>
       </xsd:enumeration>
       <xsd:enumeration value="unspecified-document-with-photo-identification">
@@ -1147,22 +1147,22 @@ All elements are optional, however at least FullName must be included if the oth
     <xsd:sequence>
       <xsd:element name="FirstName" type="xsd:string" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Personís first (given) name.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Person‚Äôs first (given) name.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="FullName" type="xsd:string" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Personís full name.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Person‚Äôs full name.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="LastName" type="xsd:string" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Personís last (family) name.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Person‚Äôs last (family) name.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="MiddleName" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Personís middle name.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Person‚Äôs middle name.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="Prefix" type="xsd:string" minOccurs="0">
@@ -1188,7 +1188,7 @@ Voter optionally includes this attribute to specify a voters political party.</x
     <xsd:sequence>
       <xsd:element name="Abbreviation" type="xsd:string" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Short name for the party, e.g., ìDEMî.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Short name for the party, e.g., ‚ÄúDEM‚Äù.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="ExternalIdentifier" type="ExternalIdentifier" minOccurs="0" maxOccurs="unbounded">
@@ -1198,7 +1198,7 @@ Voter optionally includes this attribute to specify a voters political party.</x
       </xsd:element>
       <xsd:element name="Name" type="xsd:string">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Official full name of the party, e.g., ìRepublicanî.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Official full name of the party, e.g., ‚ÄúRepublican‚Äù.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
     </xsd:sequence>
@@ -1227,7 +1227,7 @@ PhoneContactMethod is subtype of ContactMethod. Thus, the elements that include 
         <xsd:sequence>
           <xsd:element name="Capability" type="PhoneCapability" minOccurs="0" maxOccurs="unbounded">
             <xsd:annotation>
-              <xsd:documentation xml:lang="en">Specifies the phoneís capabilities, e.g., fax, sms.</xsd:documentation>
+              <xsd:documentation xml:lang="en">Specifies the phone‚Äôs capabilities, e.g., fax, sms.</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
         </xsd:sequence>
@@ -1307,7 +1307,7 @@ RequestHelper includes the Name element to specify the registration helpers name
       </xsd:element>
       <xsd:element name="Phone" type="PhoneContactMethod" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Request helperís phone number.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Request helper‚Äôs phone number.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="Signature" type="Signature" minOccurs="0">
@@ -1399,7 +1399,7 @@ For indicating that the request failed. The Error attribute is used to indicate 
 
 For indicating a successful response to a request. The Action attribute is used to indicate the action that occurred, which may differ from what was requested. For example, a request for a new voter registration may succeed, but if the voter was already registered, the response may indicate a registration update as opposed to a registration create.
 
-The response also includes, optionally, other information useful to the voter, including a description of the voterís polling place, districts (i.e., contests) associated with the polling place, or other geopolitical geographies such as the voterís precinct.</xsd:documentation>
+The response also includes, optionally, other information useful to the voter, including a description of the voter‚Äôs polling place, districts (i.e., contests) associated with the polling place, or other geopolitical geographies such as the voter‚Äôs precinct.</xsd:documentation>
     </xsd:annotation>
     <xsd:complexContent>
       <xsd:extension base="VoterRecordsResponse">
@@ -1411,7 +1411,7 @@ The response also includes, optionally, other information useful to the voter, i
           </xsd:element>
           <xsd:element name="District" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded">
             <xsd:annotation>
-              <xsd:documentation xml:lang="en">One or more districts associated with the voterís precinct.</xsd:documentation>
+              <xsd:documentation xml:lang="en">One or more districts associated with the voter‚Äôs precinct.</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="EffectiveDate" type="xsd:date" minOccurs="0">
@@ -1426,12 +1426,12 @@ The response also includes, optionally, other information useful to the voter, i
           </xsd:element>
           <xsd:element name="Locality" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded">
             <xsd:annotation>
-              <xsd:documentation xml:lang="en">Other geographies such as the voterís precinct.</xsd:documentation>
+              <xsd:documentation xml:lang="en">Other geographies such as the voter‚Äôs precinct.</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="PollingPlace" type="ReportingUnit" minOccurs="0">
             <xsd:annotation>
-              <xsd:documentation xml:lang="en">The voterís polling place.</xsd:documentation>
+              <xsd:documentation xml:lang="en">The voter‚Äôs polling place.</xsd:documentation>
             </xsd:annotation>
           </xsd:element>
         </xsd:sequence>
@@ -1514,13 +1514,13 @@ Source is used to specify the source of the voters signature, for example, on fi
       </xsd:element>
       <xsd:element name="DateOfBirth" type="xsd:date" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">The voterís data of birth in YYYY-MM-DD
+          <xsd:documentation xml:lang="en">The voter‚Äôs data of birth in YYYY-MM-DD
 format.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="Ethnicity" type="xsd:string" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">The voterís ethnicity.</xsd:documentation>
+          <xsd:documentation xml:lang="en">The voter‚Äôs ethnicity.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="Gender" type="xsd:string" minOccurs="0">
@@ -1537,17 +1537,17 @@ format.</xsd:documentation>
       </xsd:element>
       <xsd:element name="Name" type="Name">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Voterís name.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Voter‚Äôs name.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="Party" type="Party" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Voterís political party.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Voter‚Äôs political party.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="PreviousName" type="Name" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">A voterís previous name.</xsd:documentation>
+          <xsd:documentation xml:lang="en">A voter‚Äôs previous name.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="PreviousResidenceAddress" minOccurs="0">
@@ -1687,12 +1687,12 @@ AttestNoSuchId is used to attest that the voter has no ID of a specified type, t
     <xsd:annotation>
       <xsd:documentation xml:lang="en">A subtype of Voter representing a voter record stored in a Voter Registration Database (VRDB).
 
-VoterRecord optionally contains additional information useful to the voter, including a description of the voterís polling place, districts associated with the voters precinct, or other geopolitical geographies such as the voterís precinct.</xsd:documentation>
+VoterRecord optionally contains additional information useful to the voter, including a description of the voter‚Äôs polling place, districts associated with the voters precinct, or other geopolitical geographies such as the voter‚Äôs precinct.</xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element name="District" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">One or more districts associated with the voterís precinct.</xsd:documentation>
+          <xsd:documentation xml:lang="en">One or more districts associated with the voter‚Äôs precinct.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="ElectionAdministration" type="ElectionAdministration" minOccurs="0">
@@ -1707,7 +1707,7 @@ VoterRecord optionally contains additional information useful to the voter, incl
       </xsd:element>
       <xsd:element name="Locality" type="ReportingUnit" minOccurs="0" maxOccurs="unbounded">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">Other geographies such as the voterís precinct.</xsd:documentation>
+          <xsd:documentation xml:lang="en">Other geographies such as the voter‚Äôs precinct.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="OtherStatus" type="xsd:string" minOccurs="0">
@@ -1717,7 +1717,7 @@ VoterRecord optionally contains additional information useful to the voter, incl
       </xsd:element>
       <xsd:element name="PollingLocation" type="ReportingUnit" minOccurs="0">
         <xsd:annotation>
-          <xsd:documentation xml:lang="en">The voterís polling place.</xsd:documentation>
+          <xsd:documentation xml:lang="en">The voter‚Äôs polling place.</xsd:documentation>
         </xsd:annotation>
       </xsd:element>
       <xsd:element name="Voter" type="Voter"/>
@@ -1847,9 +1847,9 @@ For defining items pertaining to the status and type of the voter records reques
       <xsd:documentation xml:lang="en">The root element for response messages.
 
 For defining items pertaining to the status of a response to a voter records request.   is an abstract element with three xsi:types that get used according to the type of response:
-ï	, used to indicate an acknowledgement only.
-ï	, used to indicate a failure and the type of failure.
-ï	, used to indication that a successful registration action occurred and the type of registration action, which may differ from the type of registration action requested.
+‚Ä¢	, used to indicate an acknowledgement only.
+‚Ä¢	, used to indicate a failure and the type of failure.
+‚Ä¢	, used to indication that a successful registration action occurred and the type of registration action, which may differ from the type of registration action requested.
 
  optionally includes the  sub-element associated with the voter records request.</xsd:documentation>
     </xsd:annotation>
@@ -2338,7 +2338,7 @@ A word, phrase, or symbol used as a separator between components of a complex el
 
 1. The Address Number is defined as an integer to support address sorting, parity (even/odd) definition, and in/out of address range tests.
 2. The Address Number must be converted to a characterString when it is combined with the prefix and suffix into a Complete Address Number.
-3. Some addresses may contain letters, fractions, hyphens, decimals and other non-integer content within the Complete Address Number. Those non-integer elements should be placed in the Address Number Prefix if they appear before the Address Number, or in the Address Number Suffix if they follow the Address Number. For example, if the New York City hyphenated address 194-03 Ω 50th Avenue, New York, NY 11365 were to be parsed rather than represented as a Complete Address Number:
+3. Some addresses may contain letters, fractions, hyphens, decimals and other non-integer content within the Complete Address Number. Those non-integer elements should be placed in the Address Number Prefix if they appear before the Address Number, or in the Address Number Suffix if they follow the Address Number. For example, if the New York City hyphenated address 194-03 ¬Ω 50th Avenue, New York, NY 11365 were to be parsed rather than represented as a Complete Address Number:
 ---the Address Number Prefix would be "194-" (including the hyphen),
 ---the Address Number would be 3 (converted to "03" (text) in constructing the Complete Address Number),
 ---and the Address Number Suffix would be "1/2".
@@ -3528,7 +3528,7 @@ A word, phrase, or symbol used as a separator between components of a complex el
 				Part 1: Cadastral.&quot; Section 4.2.
 				Definition source for &quot;parcel&quot;: FGDC, May 2008. &quot;Cadastral Data
 				Content Standard for the National Spatial Data Infrastructure.&quot;
-				Vesion 1.4 ñ Fourth Revision. p. 45. (Part 3.2 &quot;Parcel)
+				Vesion 1.4 ‚Äì Fourth Revision. p. 45. (Part 3.2 &quot;Parcel)
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="xsd:string">
@@ -5005,5 +5005,3 @@ c. The suffix, if any (such as the "1/2" in 194-03 1/2), is an Address Number Su
 
   
   </xsd:schema>
-';
-GO
