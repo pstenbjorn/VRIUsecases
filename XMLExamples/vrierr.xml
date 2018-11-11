@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VoterRecordsResponse xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" d1p1:type="RequestRejection" xmlns:d1p1="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd">
+  <TransactionId>vri-validation1111201864429</TransactionId>
+  <Error>
+    <Name>identity-lookup-failed</Name>
+    <OtherError>There was an error in processing this request</OtherError>
+  </Error>
+</VoterRecordsResponse>

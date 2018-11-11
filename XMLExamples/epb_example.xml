@@ -1,58 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<VoterRecordsResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="VoterRecords" xmlns="NIST_V0_voter_records_interchange.xsd">
+<VoterRecordsResponse xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" d1p1:type="VoterRecordResults" xmlns:d1p1="http://www.w3.org/2001/XMLSchema-instance" xmlns="NIST_V0_voter_records_interchange.xsd">
   <TransactionId>epb-vri-example</TransactionId>
   <VoterRecord>
-    <DateOfBirth>1999-01-01</DateOfBirth>
-    <Gender>M</Gender>
-    <Name>
-      <FirstName>John</FirstName>
-      <FullName>John S Smith</FullName>
-      <LastName>Smith</LastName>
-      <MiddleName>S</MiddleName>
-    </Name>
-    <Party>
-      <Name>Not-specified</Name>
-    </Party>
-    <ResidenceAddress>
-      <NumberedThoroughfareAddress_type>
-        <CompleteAddressNumber>1234</CompleteAddressNumber>
-        <CompleteStreetName>E Main St</CompleteStreetName>
-        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
-      </NumberedThoroughfareAddress_type>
-    </ResidenceAddress>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not protected</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not uocava</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>no absentee ballot sent</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>Active</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>No confirmation</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterId>
-      <StringValue>9999909</StringValue>
-      <Type>state-voter-registration-id</Type>
-    </VoterId>
-    <VoterId>
-      <StringValue>V9990999</StringValue>
-      <Type>drivers-license</Type>
-    </VoterId>
     <District>
       <Name>7</Name>
       <Type>congressional</Type>
@@ -76,6 +25,73 @@
     <Locality>
       <Type>split-precinct</Type>
     </Locality>
+    <Voter>
+      <DateOfBirth>1999-01-01</DateOfBirth>
+      <Gender>M</Gender>
+      <Name>
+        <FirstName>John</FirstName>
+        <FullName>John S Smith</FullName>
+        <LastName>Smith</LastName>
+        <MiddleName>S</MiddleName>
+      </Name>
+      <Party>
+        <Name>Not-specified</Name>
+      </Party>
+      <ResidenceAddress>
+        <NumberedThoroughfareAddress_type>
+          <addr:CompleteAddressNumber>
+            <addr_type:AddressNumber>1234</addr_type:AddressNumber>
+          </addr:CompleteAddressNumber>
+          <addr:CompleteStreetName>
+            <addr_type:StreetName>E Main St</addr_type:StreetName>
+          </addr:CompleteStreetName>
+          <addr:CompleteSubaddress>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier />
+            </addr_type:SubaddressElement>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier>Richmond, VA 23222 US</addr_type:SubaddressIdentifier>
+            </addr_type:SubaddressElement>
+          </addr:CompleteSubaddress>
+          <addr_type:CompletePlaceName>
+            <addr_type:PlaceName>Richmond</addr_type:PlaceName>
+          </addr_type:CompletePlaceName>
+        </NumberedThoroughfareAddress_type>
+      </ResidenceAddress>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not protected</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not uocava</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>no absentee ballot sent</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>Active</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>No confirmation</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterId>
+        <StringValue>9999909</StringValue>
+        <Type>state-voter-registration-id</Type>
+      </VoterId>
+      <VoterId>
+        <StringValue>V9990999</StringValue>
+        <Type>drivers-license</Type>
+      </VoterId>
+    </Voter>
     <VoterParticipation>
       <BallotStyle>
         <ExternalIdentifier>
@@ -90,57 +106,6 @@
     </VoterParticipation>
   </VoterRecord>
   <VoterRecord>
-    <DateOfBirth>1955-01-01</DateOfBirth>
-    <Gender>F</Gender>
-    <Name>
-      <FirstName>Mary</FirstName>
-      <FullName>Mary Alice Allison</FullName>
-      <LastName>Allison</LastName>
-      <MiddleName>Alice</MiddleName>
-    </Name>
-    <Party>
-      <Name>Not-specified</Name>
-    </Party>
-    <ResidenceAddress>
-      <NumberedThoroughfareAddress_type>
-        <CompleteAddressNumber>2121</CompleteAddressNumber>
-        <CompleteStreetName>N 17th St</CompleteStreetName>
-        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
-      </NumberedThoroughfareAddress_type>
-    </ResidenceAddress>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not protected</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not uocava</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>no absentee ballot sent</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>Active</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>No confirmation</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterId>
-      <StringValue>8888825</StringValue>
-      <Type>state-voter-registration-id</Type>
-    </VoterId>
-    <VoterId>
-      <StringValue>V1111225</StringValue>
-      <Type>drivers-license</Type>
-    </VoterId>
     <District>
       <Name>7</Name>
       <Type>congressional</Type>
@@ -164,6 +129,73 @@
     <Locality>
       <Type>split-precinct</Type>
     </Locality>
+    <Voter>
+      <DateOfBirth>1955-01-01</DateOfBirth>
+      <Gender>F</Gender>
+      <Name>
+        <FirstName>Mary</FirstName>
+        <FullName>Mary Alice Allison</FullName>
+        <LastName>Allison</LastName>
+        <MiddleName>Alice</MiddleName>
+      </Name>
+      <Party>
+        <Name>Not-specified</Name>
+      </Party>
+      <ResidenceAddress>
+        <NumberedThoroughfareAddress_type>
+          <addr:CompleteAddressNumber>
+            <addr_type:AddressNumber>2121</addr_type:AddressNumber>
+          </addr:CompleteAddressNumber>
+          <addr:CompleteStreetName>
+            <addr_type:StreetName>N 17th St</addr_type:StreetName>
+          </addr:CompleteStreetName>
+          <addr:CompleteSubaddress>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier> APT 125</addr_type:SubaddressIdentifier>
+            </addr_type:SubaddressElement>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier>Richmond, VA 23222 US</addr_type:SubaddressIdentifier>
+            </addr_type:SubaddressElement>
+          </addr:CompleteSubaddress>
+          <addr_type:CompletePlaceName>
+            <addr_type:PlaceName>Richmond</addr_type:PlaceName>
+          </addr_type:CompletePlaceName>
+        </NumberedThoroughfareAddress_type>
+      </ResidenceAddress>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not protected</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not uocava</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>no absentee ballot sent</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>Active</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>No confirmation</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterId>
+        <StringValue>8888825</StringValue>
+        <Type>state-voter-registration-id</Type>
+      </VoterId>
+      <VoterId>
+        <StringValue>V1111225</StringValue>
+        <Type>drivers-license</Type>
+      </VoterId>
+    </Voter>
     <VoterParticipation>
       <BallotStyle>
         <ExternalIdentifier>
@@ -178,57 +210,6 @@
     </VoterParticipation>
   </VoterRecord>
   <VoterRecord>
-    <DateOfBirth>1975-01-01</DateOfBirth>
-    <Gender>M</Gender>
-    <Name>
-      <FirstName>Juan</FirstName>
-      <FullName>Juan Montez Juares</FullName>
-      <LastName>Juares</LastName>
-      <MiddleName>Montez</MiddleName>
-    </Name>
-    <Party>
-      <Name>Not-specified</Name>
-    </Party>
-    <ResidenceAddress>
-      <NumberedThoroughfareAddress_type>
-        <CompleteAddressNumber>5200</CompleteAddressNumber>
-        <CompleteStreetName>E Cary St</CompleteStreetName>
-        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
-      </NumberedThoroughfareAddress_type>
-    </ResidenceAddress>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not protected</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not uocava</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>no absentee ballot sent</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>Active</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>No confirmation</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterId>
-      <StringValue>1155454</StringValue>
-      <Type>state-voter-registration-id</Type>
-    </VoterId>
-    <VoterId>
-      <StringValue>V4554545</StringValue>
-      <Type>drivers-license</Type>
-    </VoterId>
     <District>
       <Name>7</Name>
       <Type>congressional</Type>
@@ -252,6 +233,73 @@
     <Locality>
       <Type>split-precinct</Type>
     </Locality>
+    <Voter>
+      <DateOfBirth>1975-01-01</DateOfBirth>
+      <Gender>M</Gender>
+      <Name>
+        <FirstName>Juan</FirstName>
+        <FullName>Juan Montez Juares</FullName>
+        <LastName>Juares</LastName>
+        <MiddleName>Montez</MiddleName>
+      </Name>
+      <Party>
+        <Name>Not-specified</Name>
+      </Party>
+      <ResidenceAddress>
+        <NumberedThoroughfareAddress_type>
+          <addr:CompleteAddressNumber>
+            <addr_type:AddressNumber>5200</addr_type:AddressNumber>
+          </addr:CompleteAddressNumber>
+          <addr:CompleteStreetName>
+            <addr_type:StreetName>E Cary St</addr_type:StreetName>
+          </addr:CompleteStreetName>
+          <addr:CompleteSubaddress>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier />
+            </addr_type:SubaddressElement>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier>Richmond, VA 23222 US</addr_type:SubaddressIdentifier>
+            </addr_type:SubaddressElement>
+          </addr:CompleteSubaddress>
+          <addr_type:CompletePlaceName>
+            <addr_type:PlaceName>Richmond</addr_type:PlaceName>
+          </addr_type:CompletePlaceName>
+        </NumberedThoroughfareAddress_type>
+      </ResidenceAddress>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not protected</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not uocava</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>no absentee ballot sent</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>Active</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>No confirmation</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterId>
+        <StringValue>1155454</StringValue>
+        <Type>state-voter-registration-id</Type>
+      </VoterId>
+      <VoterId>
+        <StringValue>V4554545</StringValue>
+        <Type>drivers-license</Type>
+      </VoterId>
+    </Voter>
     <VoterParticipation>
       <BallotStyle>
         <ExternalIdentifier>
@@ -266,57 +314,6 @@
     </VoterParticipation>
   </VoterRecord>
   <VoterRecord>
-    <DateOfBirth>2000-01-01</DateOfBirth>
-    <Gender>M</Gender>
-    <Name>
-      <FirstName>Patrick</FirstName>
-      <FullName>Patrick Andrew Reilly, Jr.</FullName>
-      <LastName>Reilly</LastName>
-      <MiddleName>Andrew</MiddleName>
-    </Name>
-    <Party>
-      <Name>Not-specified</Name>
-    </Party>
-    <ResidenceAddress>
-      <NumberedThoroughfareAddress_type>
-        <CompleteAddressNumber>3355</CompleteAddressNumber>
-        <CompleteStreetName>N 19th St</CompleteStreetName>
-        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
-      </NumberedThoroughfareAddress_type>
-    </ResidenceAddress>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not protected</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not uocava</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>no absentee ballot sent</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>Active</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>No confirmation</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterId>
-      <StringValue>1022554</StringValue>
-      <Type>state-voter-registration-id</Type>
-    </VoterId>
-    <VoterId>
-      <StringValue>V4545555</StringValue>
-      <Type>drivers-license</Type>
-    </VoterId>
     <District>
       <Name>7</Name>
       <Type>congressional</Type>
@@ -340,6 +337,73 @@
     <Locality>
       <Type>split-precinct</Type>
     </Locality>
+    <Voter>
+      <DateOfBirth>2000-01-01</DateOfBirth>
+      <Gender>M</Gender>
+      <Name>
+        <FirstName>Patrick</FirstName>
+        <FullName>Patrick Andrew Reilly, Jr.</FullName>
+        <LastName>Reilly</LastName>
+        <MiddleName>Andrew</MiddleName>
+      </Name>
+      <Party>
+        <Name>Not-specified</Name>
+      </Party>
+      <ResidenceAddress>
+        <NumberedThoroughfareAddress_type>
+          <addr:CompleteAddressNumber>
+            <addr_type:AddressNumber>3355</addr_type:AddressNumber>
+          </addr:CompleteAddressNumber>
+          <addr:CompleteStreetName>
+            <addr_type:StreetName>N 19th St</addr_type:StreetName>
+          </addr:CompleteStreetName>
+          <addr:CompleteSubaddress>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier />
+            </addr_type:SubaddressElement>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier>Richmond, VA 23222 US</addr_type:SubaddressIdentifier>
+            </addr_type:SubaddressElement>
+          </addr:CompleteSubaddress>
+          <addr_type:CompletePlaceName>
+            <addr_type:PlaceName>Richmond</addr_type:PlaceName>
+          </addr_type:CompletePlaceName>
+        </NumberedThoroughfareAddress_type>
+      </ResidenceAddress>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not protected</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not uocava</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>no absentee ballot sent</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>Active</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>No confirmation</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterId>
+        <StringValue>1022554</StringValue>
+        <Type>state-voter-registration-id</Type>
+      </VoterId>
+      <VoterId>
+        <StringValue>V4545555</StringValue>
+        <Type>drivers-license</Type>
+      </VoterId>
+    </Voter>
     <VoterParticipation>
       <BallotStyle>
         <ExternalIdentifier>
@@ -354,57 +418,6 @@
     </VoterParticipation>
   </VoterRecord>
   <VoterRecord>
-    <DateOfBirth>1984-01-01</DateOfBirth>
-    <Gender>F</Gender>
-    <Name>
-      <FirstName>Susan</FirstName>
-      <FullName>Susan McAndrew</FullName>
-      <LastName>McAndrew</LastName>
-      <MiddleName />
-    </Name>
-    <Party>
-      <Name>Not-specified</Name>
-    </Party>
-    <ResidenceAddress>
-      <NumberedThoroughfareAddress_type>
-        <CompleteAddressNumber>22</CompleteAddressNumber>
-        <CompleteStreetName>N 21st St</CompleteStreetName>
-        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
-      </NumberedThoroughfareAddress_type>
-    </ResidenceAddress>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not protected</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not uocava</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>no absentee ballot sent</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>Active</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>No confirmation</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterId>
-      <StringValue>6556565</StringValue>
-      <Type>state-voter-registration-id</Type>
-    </VoterId>
-    <VoterId>
-      <StringValue>V5454554</StringValue>
-      <Type>drivers-license</Type>
-    </VoterId>
     <District>
       <Name>7</Name>
       <Type>congressional</Type>
@@ -428,6 +441,73 @@
     <Locality>
       <Type>split-precinct</Type>
     </Locality>
+    <Voter>
+      <DateOfBirth>1984-01-01</DateOfBirth>
+      <Gender>F</Gender>
+      <Name>
+        <FirstName>Susan</FirstName>
+        <FullName>Susan McAndrew</FullName>
+        <LastName>McAndrew</LastName>
+        <MiddleName />
+      </Name>
+      <Party>
+        <Name>Not-specified</Name>
+      </Party>
+      <ResidenceAddress>
+        <NumberedThoroughfareAddress_type>
+          <addr:CompleteAddressNumber>
+            <addr_type:AddressNumber>22</addr_type:AddressNumber>
+          </addr:CompleteAddressNumber>
+          <addr:CompleteStreetName>
+            <addr_type:StreetName>N 21st St</addr_type:StreetName>
+          </addr:CompleteStreetName>
+          <addr:CompleteSubaddress>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier> APT 201</addr_type:SubaddressIdentifier>
+            </addr_type:SubaddressElement>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier>Richmond, VA 23222 US</addr_type:SubaddressIdentifier>
+            </addr_type:SubaddressElement>
+          </addr:CompleteSubaddress>
+          <addr_type:CompletePlaceName>
+            <addr_type:PlaceName>Richmond</addr_type:PlaceName>
+          </addr_type:CompletePlaceName>
+        </NumberedThoroughfareAddress_type>
+      </ResidenceAddress>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not protected</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not uocava</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>no absentee ballot sent</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>Active</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>No confirmation</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterId>
+        <StringValue>6556565</StringValue>
+        <Type>state-voter-registration-id</Type>
+      </VoterId>
+      <VoterId>
+        <StringValue>V5454554</StringValue>
+        <Type>drivers-license</Type>
+      </VoterId>
+    </Voter>
     <VoterParticipation>
       <BallotStyle>
         <ExternalIdentifier>
@@ -442,57 +522,6 @@
     </VoterParticipation>
   </VoterRecord>
   <VoterRecord>
-    <DateOfBirth>1964-01-01</DateOfBirth>
-    <Gender>F</Gender>
-    <Name>
-      <FirstName>Jesse</FirstName>
-      <FullName>Jesse Wilson Ferguson</FullName>
-      <LastName>Ferguson</LastName>
-      <MiddleName>Wilson</MiddleName>
-    </Name>
-    <Party>
-      <Name>Not-specified</Name>
-    </Party>
-    <ResidenceAddress>
-      <NumberedThoroughfareAddress_type>
-        <CompleteAddressNumber>1124</CompleteAddressNumber>
-        <CompleteStreetName>E Main St</CompleteStreetName>
-        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
-      </NumberedThoroughfareAddress_type>
-    </ResidenceAddress>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not protected</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not uocava</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>no absentee ballot sent</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>Active</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>No confirmation</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterId>
-      <StringValue>6565888</StringValue>
-      <Type>state-voter-registration-id</Type>
-    </VoterId>
-    <VoterId>
-      <StringValue>V4588855</StringValue>
-      <Type>drivers-license</Type>
-    </VoterId>
     <District>
       <Name>7</Name>
       <Type>congressional</Type>
@@ -516,6 +545,73 @@
     <Locality>
       <Type>split-precinct</Type>
     </Locality>
+    <Voter>
+      <DateOfBirth>1964-01-01</DateOfBirth>
+      <Gender>F</Gender>
+      <Name>
+        <FirstName>Jesse</FirstName>
+        <FullName>Jesse Wilson Ferguson</FullName>
+        <LastName>Ferguson</LastName>
+        <MiddleName>Wilson</MiddleName>
+      </Name>
+      <Party>
+        <Name>Not-specified</Name>
+      </Party>
+      <ResidenceAddress>
+        <NumberedThoroughfareAddress_type>
+          <addr:CompleteAddressNumber>
+            <addr_type:AddressNumber>1124</addr_type:AddressNumber>
+          </addr:CompleteAddressNumber>
+          <addr:CompleteStreetName>
+            <addr_type:StreetName>E Main St</addr_type:StreetName>
+          </addr:CompleteStreetName>
+          <addr:CompleteSubaddress>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier />
+            </addr_type:SubaddressElement>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier>Richmond, VA 23222 US</addr_type:SubaddressIdentifier>
+            </addr_type:SubaddressElement>
+          </addr:CompleteSubaddress>
+          <addr_type:CompletePlaceName>
+            <addr_type:PlaceName>Richmond</addr_type:PlaceName>
+          </addr_type:CompletePlaceName>
+        </NumberedThoroughfareAddress_type>
+      </ResidenceAddress>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not protected</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not uocava</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>no absentee ballot sent</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>Active</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>No confirmation</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterId>
+        <StringValue>6565888</StringValue>
+        <Type>state-voter-registration-id</Type>
+      </VoterId>
+      <VoterId>
+        <StringValue>V4588855</StringValue>
+        <Type>drivers-license</Type>
+      </VoterId>
+    </Voter>
     <VoterParticipation>
       <BallotStyle>
         <ExternalIdentifier>
@@ -530,57 +626,6 @@
     </VoterParticipation>
   </VoterRecord>
   <VoterRecord>
-    <DateOfBirth>1977-01-01</DateOfBirth>
-    <Gender>M</Gender>
-    <Name>
-      <FirstName>Armond</FirstName>
-      <FullName>Armond Lester Waters</FullName>
-      <LastName>Waters</LastName>
-      <MiddleName>Lester</MiddleName>
-    </Name>
-    <Party>
-      <Name>Not-specified</Name>
-    </Party>
-    <ResidenceAddress>
-      <NumberedThoroughfareAddress_type>
-        <CompleteAddressNumber>8855</CompleteAddressNumber>
-        <CompleteStreetName>E Marshall St</CompleteStreetName>
-        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
-      </NumberedThoroughfareAddress_type>
-    </ResidenceAddress>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not protected</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not uocava</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>no absentee ballot sent</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>Inactive</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>No confirmation</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterId>
-      <StringValue>9955200</StringValue>
-      <Type>state-voter-registration-id</Type>
-    </VoterId>
-    <VoterId>
-      <StringValue>V3355656</StringValue>
-      <Type>drivers-license</Type>
-    </VoterId>
     <District>
       <Name>7</Name>
       <Type>congressional</Type>
@@ -604,6 +649,73 @@
     <Locality>
       <Type>split-precinct</Type>
     </Locality>
+    <Voter>
+      <DateOfBirth>1977-01-01</DateOfBirth>
+      <Gender>M</Gender>
+      <Name>
+        <FirstName>Armond</FirstName>
+        <FullName>Armond Lester Waters</FullName>
+        <LastName>Waters</LastName>
+        <MiddleName>Lester</MiddleName>
+      </Name>
+      <Party>
+        <Name>Not-specified</Name>
+      </Party>
+      <ResidenceAddress>
+        <NumberedThoroughfareAddress_type>
+          <addr:CompleteAddressNumber>
+            <addr_type:AddressNumber>8855</addr_type:AddressNumber>
+          </addr:CompleteAddressNumber>
+          <addr:CompleteStreetName>
+            <addr_type:StreetName>E Marshall St</addr_type:StreetName>
+          </addr:CompleteStreetName>
+          <addr:CompleteSubaddress>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier> APT 100</addr_type:SubaddressIdentifier>
+            </addr_type:SubaddressElement>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier>Richmond, VA 23222 US</addr_type:SubaddressIdentifier>
+            </addr_type:SubaddressElement>
+          </addr:CompleteSubaddress>
+          <addr_type:CompletePlaceName>
+            <addr_type:PlaceName>Richmond</addr_type:PlaceName>
+          </addr_type:CompletePlaceName>
+        </NumberedThoroughfareAddress_type>
+      </ResidenceAddress>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not protected</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not uocava</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>no absentee ballot sent</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>Inactive</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>No confirmation</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterId>
+        <StringValue>9955200</StringValue>
+        <Type>state-voter-registration-id</Type>
+      </VoterId>
+      <VoterId>
+        <StringValue>V3355656</StringValue>
+        <Type>drivers-license</Type>
+      </VoterId>
+    </Voter>
     <VoterParticipation>
       <BallotStyle>
         <ExternalIdentifier>
@@ -618,57 +730,6 @@
     </VoterParticipation>
   </VoterRecord>
   <VoterRecord>
-    <DateOfBirth>1945-01-01</DateOfBirth>
-    <Gender>F</Gender>
-    <Name>
-      <FirstName>Yun</FirstName>
-      <FullName>Yun Lin</FullName>
-      <LastName>Lin</LastName>
-      <MiddleName />
-    </Name>
-    <Party>
-      <Name>Not-specified</Name>
-    </Party>
-    <ResidenceAddress>
-      <NumberedThoroughfareAddress_type>
-        <CompleteAddressNumber>654</CompleteAddressNumber>
-        <CompleteStreetName>E Leigh St</CompleteStreetName>
-        <CompleteSubaddress>Richmond, VA 23222 US</CompleteSubaddress>
-      </NumberedThoroughfareAddress_type>
-    </ResidenceAddress>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not protected</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>not uocava</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>no absentee ballot sent</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>Active</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterClassification>
-      <Assertion>no</Assertion>
-      <OtherType>No confirmation</OtherType>
-      <Type>other</Type>
-    </VoterClassification>
-    <VoterId>
-      <StringValue>1002250</StringValue>
-      <Type>state-voter-registration-id</Type>
-    </VoterId>
-    <VoterId>
-      <StringValue>V3222332</StringValue>
-      <Type>drivers-license</Type>
-    </VoterId>
     <District>
       <Name>7</Name>
       <Type>congressional</Type>
@@ -692,6 +753,73 @@
     <Locality>
       <Type>split-precinct</Type>
     </Locality>
+    <Voter>
+      <DateOfBirth>1945-01-01</DateOfBirth>
+      <Gender>F</Gender>
+      <Name>
+        <FirstName>Yun</FirstName>
+        <FullName>Yun Lin</FullName>
+        <LastName>Lin</LastName>
+        <MiddleName />
+      </Name>
+      <Party>
+        <Name>Not-specified</Name>
+      </Party>
+      <ResidenceAddress>
+        <NumberedThoroughfareAddress_type>
+          <addr:CompleteAddressNumber>
+            <addr_type:AddressNumber>654</addr_type:AddressNumber>
+          </addr:CompleteAddressNumber>
+          <addr:CompleteStreetName>
+            <addr_type:StreetName>E Leigh St</addr_type:StreetName>
+          </addr:CompleteStreetName>
+          <addr:CompleteSubaddress>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier />
+            </addr_type:SubaddressElement>
+            <addr_type:SubaddressElement>
+              <addr_type:SubaddressIdentifier>Richmond, VA 23222 US</addr_type:SubaddressIdentifier>
+            </addr_type:SubaddressElement>
+          </addr:CompleteSubaddress>
+          <addr_type:CompletePlaceName>
+            <addr_type:PlaceName>Richmond</addr_type:PlaceName>
+          </addr_type:CompletePlaceName>
+        </NumberedThoroughfareAddress_type>
+      </ResidenceAddress>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not protected</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>not uocava</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>no absentee ballot sent</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>Active</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterClassification>
+        <Assertion>no</Assertion>
+        <OtherType>No confirmation</OtherType>
+        <Type>other</Type>
+      </VoterClassification>
+      <VoterId>
+        <StringValue>1002250</StringValue>
+        <Type>state-voter-registration-id</Type>
+      </VoterId>
+      <VoterId>
+        <StringValue>V3222332</StringValue>
+        <Type>drivers-license</Type>
+      </VoterId>
+    </Voter>
     <VoterParticipation>
       <BallotStyle>
         <ExternalIdentifier>

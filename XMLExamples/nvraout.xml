@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<VoterRecordsRequest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="NIST_V0_voter_records_interchange.xsd">
-  <GeneratedDate>2018-09-03</GeneratedDate>
+<VoterRecordsRequest xmlns:addr_type="http://www.fgdc.gov/schemas/address/addr_type" xmlns:addr="http://www.fgdc.gov/schemas/address/addr" xmlns="NIST_V0_voter_records_interchange.xsd">
+  <GeneratedDate>2018-11-11</GeneratedDate>
   <Issuer>NVRA Agency</Issuer>
   <RequestMethod>motor-vehicle-office</RequestMethod>
   <Subject>
@@ -13,9 +13,20 @@
     </Name>
     <ResidenceAddress>
       <NumberedThoroughfareAddress_type>
-        <CompleteAddressNumber>1324</CompleteAddressNumber>
-        <CompleteStreetName>E Main Street</CompleteStreetName>
-        <CompleteSubaddress>Richmond, VA 23222</CompleteSubaddress>
+        <addr:CompleteAddressNumber>
+          <addr_type:AddressNumber>1324</addr_type:AddressNumber>
+        </addr:CompleteAddressNumber>
+        <addr:CompleteStreetName>
+          <addr_type:StreetName>E Main Street</addr_type:StreetName>
+        </addr:CompleteStreetName>
+        <addr:CompleteSubaddress>
+          <addr_type:SubaddressElement>
+            <addr_type:SubaddressIdentifier>Richmond, VA 23222</addr_type:SubaddressIdentifier>
+          </addr_type:SubaddressElement>
+        </addr:CompleteSubaddress>
+        <addr_type:CompletePlaceName>
+          <addr_type:PlaceName>RICHMOND CITY</addr_type:PlaceName>
+        </addr_type:CompletePlaceName>
       </NumberedThoroughfareAddress_type>
     </ResidenceAddress>
     <VoterId>
@@ -28,6 +39,6 @@
       <Type>ssn4</Type>
     </VoterId>
   </Subject>
-  <TransactionId>vri-request93201822012</TransactionId>
+  <TransactionId>vri-request1111201864427</TransactionId>
   <Type>lookup</Type>
 </VoterRecordsRequest>
