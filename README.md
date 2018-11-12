@@ -38,5 +38,4 @@ The Python examples include complete class libraries for the VRI.  In the future
 ### T-SQL
 
 The T-SQL examples include the scripts needed to generate a SQL Schema Collection from a modified version of the VRI.  The limitations of SQL's interpretation of XSDs may be found [here](https://docs.microsoft.com/en-us/sql/relational-databases/xml/requirements-and-limitations-for-xml-schema-collections-on-the-server?view=sql-server-2017)
-(
 
