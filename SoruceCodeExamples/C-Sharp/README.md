@@ -1,4 +1,4 @@
-#VRI C-sharp Code Examples
+# VRI C-sharp Code Examples
 
 The C-sharp code examples contained in this directory include custom class objects defined for the entire VRI spec.  Below is a brief description of what can be found in each of the files in this directory.
 
