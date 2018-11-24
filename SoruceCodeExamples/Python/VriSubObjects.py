@@ -3,10 +3,10 @@
 
 #
 
-import sys
+import sys, io
 from lxml import etree as etree_
 
-import ??? as supermod
+import VriCoreObjects as supermod
 
 def parsexml_(infile, parser=None, **kwargs):
     if parser is None:
@@ -741,7 +741,7 @@ def parseEtree(inFilename, silence=False):
 
 def parseString(inString, silence=False):
     if sys.version_info.major == 2:
-        from StringIO import StringIO
+        from io import StringIO
     else:
         from io import BytesIO as StringIO
     parser = None

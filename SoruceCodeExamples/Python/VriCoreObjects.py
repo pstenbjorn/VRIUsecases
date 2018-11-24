@@ -3,7 +3,7 @@
 
 #
 
-import sys
+import sys, json
 import re as re_
 import base64
 import datetime as datetime_
@@ -16,7 +16,7 @@ except ImportError:
 
 Validate_simpletypes_ = True
 if sys.version_info.major == 2:
-    BaseStrType_ = basestring
+    BaseStrType_ = str
 else:
     BaseStrType_ = str
 
@@ -1964,6 +1964,10 @@ class Error(GeneratedsSuper):
             Ref_ = child_.text
             Ref_ = self.gds_validate_string(Ref_, node, 'Ref')
             self.Ref = Ref_
+    #Paul's added JSON output helper
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, 
+            sort_keys=True)
 # end class Error
 
 
@@ -4321,9 +4325,9 @@ class VoterRecord(GeneratedsSuper):
     """A subtype of Voter representing a voter record stored in a Voter
     Registration Database (VRDB). VoterRecord optionally contains
     additional information useful to the voter, including a
-    description of the voter’s polling place, districts associated
+    description of the voters polling place, districts associated
     with the voter's precinct, or other geopolitical geographies
-    such as the voter’s precinct."""
+    such as the voters precinct."""
     subclass = None
     superclass = None
     def __init__(self, District=None, ElectionAdministration=None, HavaIdRequired=None, Locality=None, OtherStatus=None, PollingLocation=None, Voter=None, VoterParticipation=None, VoterStatus=None):
@@ -4854,9 +4858,9 @@ class VoterRecordsResponse(GeneratedsSuper):
     """The root element for response messages. For defining items
     pertaining to the status of a response to a voter records
     request. is an abstract element with three xsi:types that get
-    used according to the type of response: • , used to indicate an
-    acknowledgement only. • , used to indicate a failure and the
-    type of failure. • , used to indication that a successful
+    used according to the type of response:  , used to indicate an
+    acknowledgement only.  , used to indicate a failure and the
+    type of failure.  , used to indication that a successful
     registration action occurred and the type of registration
     action, which may differ from the type of registration action
     requested. optionally includes the sub-element associated with
@@ -4941,6 +4945,10 @@ class VoterRecordsResponse(GeneratedsSuper):
             TransactionId_ = child_.text
             TransactionId_ = self.gds_validate_string(TransactionId_, node, 'TransactionId')
             self.TransactionId = TransactionId_
+    #Paul's added JSON output helper
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, 
+            sort_keys=True)
 # end class VoterRecordsResponse
 
 
@@ -21629,6 +21637,10 @@ class VoterRecordResults(VoterRecordsResponse):
             self.VoterRecord.append(obj_)
             obj_.original_tagname_ = 'VoterRecord'
         super(VoterRecordResults, self).buildChildren(child_, node, nodeName_, True)
+    #Paul's added JSON output helper
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, 
+            sort_keys=True)
 # end class VoterRecordResults
 
 
@@ -21640,9 +21652,9 @@ class RequestSuccess(VoterRecordsResponse):
     if the voter was already registered, the response may indicate a
     registration update as opposed to a registration create. The
     response also includes, optionally, other information useful to
-    the voter, including a description of the voter’s polling place,
+    the voter, including a description of the voters polling place,
     districts (i.e., contests) associated with the polling place, or
-    other geopolitical geographies such as the voter’s precinct."""
+    other geopolitical geographies such as the voters precinct."""
     subclass = None
     superclass = VoterRecordsResponse
     def __init__(self, TransactionId=None, Action=None, District=None, EffectiveDate=None, ElectionAdministration=None, Locality=None, PollingPlace=None):
@@ -21913,6 +21925,10 @@ class RequestRejection(VoterRecordsResponse):
             self.Error.append(obj_)
             obj_.original_tagname_ = 'Error'
         super(RequestRejection, self).buildChildren(child_, node, nodeName_, True)
+    #Added JSON helper
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__, 
+            sort_keys=True)
 # end class RequestRejection
 
 
