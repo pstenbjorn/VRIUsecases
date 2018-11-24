@@ -16,7 +16,7 @@ This repository stores reference files and other information for Democracy Fund'
 
 An executive summary of the project that describes the use cases may be found [here](https://docs.google.com/document/d/1PNgzhddQpsRgWFy03Kp80-qUHyApJB4dL6zjqUZAgzc/edit?usp=sharing)
 
-A complete review of the use cases may be found [here] (https://docs.google.com/document/d/1KL_1i7h4rFC14CcFHFmV4IKVQEdFUccxJFWNzb1r8gw/edit?usp=sharing)
+A complete review of the use cases may be found [here](https://docs.google.com/document/d/1KL_1i7h4rFC14CcFHFmV4IKVQEdFUccxJFWNzb1r8gw/edit?usp=sharing)
 
 In short the project three fundemental use cases for the VRI:
 
